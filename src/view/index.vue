@@ -1,33 +1,46 @@
 <script setup lang="ts">
+import "@/utils/shortcutKey";
+import ".";
 import Tool from "@/components/tool/index.vue";
 import { StartLoading } from "@/store/loading";
-import { NCode } from "naive-ui";
+import { NCode, NDropdown } from "naive-ui";
+import { HandleContextMenu, dropdownApi } from "./menu";
+
+import demo from "./demo.vue";
 </script>
 
 <template>
-  <div class="app">
-    <Tool />
+  <div class="menu-area" @contextmenu="HandleContextMenu">
+    <div class="app">
+      <Tool />
+      <demo />
+    </div>
+    <NDropdown :="dropdownApi" />
   </div>
 </template>
 
 <style lang="less">
 body {
   margin: 0;
-  @media screen and (max-width: 1000px) {
-    .app {
-      left: 0;
-    }
-  }
-  --width: 1000px;
-  .app {
-    width: var(--width);
-    max-width: 100vw;
+  .menu-area {
+    width: 100vw;
     height: var(--100vh, 100vh);
-    display: flex;
-    flex-direction: column;
-    position: absolute;
-    top: 0;
-    left: calc(50% - var(--width) / 2);
+    @media screen and (max-width: 1000px) {
+      .app {
+        left: 0;
+      }
+    }
+    --width: 1000px;
+    .app {
+      width: var(--width);
+      max-width: 100vw;
+      height: var(--100vh, 100vh);
+      display: flex;
+      flex-direction: column;
+      position: absolute;
+      top: 0;
+      left: calc(50% - var(--width) / 2);
+    }
   }
 }
 </style>
