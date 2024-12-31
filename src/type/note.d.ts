@@ -33,8 +33,12 @@ interface NotesContent {
   };
   /** 文件列表 */
   files: {
+    key: string;
+    /** 文件名称 */
     name?: string;
+    /** 文件路径 */
     url?: string;
+    /** 文件类型 */
     type?: "image" | "video" | "audio" | "file";
   }[];
 

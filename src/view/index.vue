@@ -2,8 +2,7 @@
 import "@/utils/shortcutKey";
 import ".";
 import Tool from "@/components/tool/index.vue";
-import { StartLoading } from "@/store/loading";
-import { NCode, NDropdown } from "naive-ui";
+import { NDropdown } from "naive-ui";
 import { HandleContextMenu, dropdownApi } from "./menu";
 
 import demo from "./demo.vue";
