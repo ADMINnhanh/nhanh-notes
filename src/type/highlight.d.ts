@@ -1,4 +1,4 @@
-const language: CodeLanguage = [
+type CodeLanguage = [
   "1c",
   "abnf",
   "accesslog",
@@ -190,5 +190,5 @@ const language: CodeLanguage = [
   "x86asm",
   "xl",
   "xquery",
-  "zephir",
+  "zephir"
 ];
